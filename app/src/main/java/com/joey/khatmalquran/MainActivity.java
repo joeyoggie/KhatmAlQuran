@@ -225,6 +225,7 @@ public class MainActivity extends Activity {
         storageReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                //TODO use root/users/groups list to fetch groups from the database
                 groups.clear();
                 Group group;
                 for(DataSnapshot childSnapshot : dataSnapshot.getChildren()){
@@ -258,6 +259,7 @@ public class MainActivity extends Activity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    //TODO add groupID to root/users/groups list as well, and use that groups list to fetch groups from the database
                     configurationReference = mDatabase.getReference("root/config/");
                     configurationReference.child("latestGroupID").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -318,6 +320,7 @@ public class MainActivity extends Activity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    //TODO add groupID to root/users/groups list as well, and use that groups list to fetch groups from the database
                     storageReference = mDatabase.getReference("root/groups");
                     storageReference.child(groupID).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -428,6 +431,15 @@ public class MainActivity extends Activity {
         //Change settings icon to 'X' icon
         groupsFabButton.setImageResource(R.drawable.ic_action_cancel);
         fabExpanded = true;
+    }
+
+    @Override
+    public void onBackPressed(){
+        if (fabExpanded == true){
+            closeSubMenusFab();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     private void checkPermissions(){
