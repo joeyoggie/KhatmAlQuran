@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "476328149951",
+    "firebase_url": "https://khatm-al-quran.firebaseio.com",
+    "project_id": "khatm-al-quran",
+    "storage_bucket": "khatm-al-quran.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476328149951:android:a73d57cb99288d95",
+        "android_client_info": {
+          "package_name": "com.joey.khatmalquran"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "476328149951-vgsmoap10jv4k97pq6tdl2g9tkef51qd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1fLlEUY8RNYCaBWGNF55XU3XqfuOSAu0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

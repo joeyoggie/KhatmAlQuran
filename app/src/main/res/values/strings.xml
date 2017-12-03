@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Khatm Al Quran</string>
+    <string name="parts">الأجزاء:</string>
+    <string-array name="quran_part_names">
+        <item>الحمد لله</item>
+        <item>سيقول السفهاء</item>
+        <item>تلك الرسل</item>
+        <item>لن تنالوا البر</item>
+        <item>والمحصنات</item>
+        <item>لا يحب الله</item>
+        <item>لتجدن</item>
+        <item>ولو أننا نزلنا</item>
+        <item>قال الملأ</item>
+        <item>واعلموا</item>
+        <item>يعتذرون</item>
+        <item>ومامن دابة</item>
+        <item>وما أبرئ نفسي</item>
+        <item>الـر</item>
+        <item>سبحان</item>
+        <item>قال ألم</item>
+        <item>اقترب للناس</item>
+        <item>قد أفلح</item>
+        <item>وقال الذين لا يرجون</item>
+        <item>فما كان جواب قومه</item>
+        <item>ولا تجادلوا</item>
+        <item>ومن يقنت</item>
+        <item>وما أنزلنا</item>
+        <item>فمن أظلم</item>
+        <item>إليه يرد</item>
+        <item>حـم</item>
+        <item>قال فما خطبكم</item>
+        <item>قد سمع</item>
+        <item>تبارك</item>
+        <item>عمّ</item>
+    </string-array>
+    <string-array name="quran_part_numbers">
+        <item>الجزء الأول</item>
+        <item>الجزء الثاني</item>
+        <item>الجزء الثالث</item>
+        <item>الجزء الرابع</item>
+        <item>الجزء الخامس</item>
+        <item>الجزء السادس</item>
+        <item>الجزء السابع</item>
+        <item>الجزء الثامن</item>
+        <item>الجزء التاسع</item>
+        <item>الجزء العاشر</item>
+        <item>الجزء الحادي عشر</item>
+        <item>الجزء الثاني عشر</item>
+        <item>الجزء الثالث عشر</item>
+        <item>الجزء الرابع عشر</item>
+        <item>الجزء الخامس عشر</item>
+        <item>الجزء السادس عشر</item>
+        <item>الجزء السابع عشر</item>
+        <item>الجزء الثامن عشر</item>
+        <item>الجزء التاسع عشر</item>
+        <item>الجزء العشرون</item>
+        <item>الجزء الحادي والعشرون</item>
+        <item>الجزء الثاني والعشرون</item>
+        <item>الجزء الثالث والعشرون</item>
+        <item>الجزء الرابع والعشرون</item>
+        <item>الجزء الخامس والعشرون</item>
+        <item>الجزء السادس والعشرون</item>
+        <item>الجزء السابع والعشرون</item>
+        <item>الجزء الثامن والعشرون</item>
+        <item>الجزء التاسع والعشرون</item>
+        <item>الجزء الثلاثون</item>
+    </string-array>
+</resources>
