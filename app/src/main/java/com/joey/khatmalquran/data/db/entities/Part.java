@@ -1,4 +1,4 @@
-package com.joey.khatmalquran;
+package com.joey.khatmalquran.data.db.entities;
 
 import com.google.firebase.database.Exclude;
 
@@ -14,9 +14,9 @@ public class Part {
     public static final int PART_STATE_TAKEN = 1;
     public static final int PART_STATE_COMPLETED = 2;
 
-    String partName, associatedPerson;
-    int partID, state;
-    long lastActionTimestamp, groupID, associatedPersonID;
+    private String partName, associatedPerson;
+    private int partID, state;
+    private long lastActionTimestamp, groupID, associatedPersonID;
 
     public Part(){
 

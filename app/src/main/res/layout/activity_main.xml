@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.joey.khatmalquran.MainActivity">
+    tools:context="com.joey.khatmalquran.ui.main.MainActivity">
 
     <TextView
         android:id="@+id/groups_textview"
@@ -33,7 +33,7 @@
         android:visibility="invisible"
         android:padding="8dp"/>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/groups_fab_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

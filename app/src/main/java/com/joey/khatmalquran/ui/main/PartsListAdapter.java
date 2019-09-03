@@ -1,4 +1,4 @@
-package com.joey.khatmalquran;
+package com.joey.khatmalquran.ui.main;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.joey.khatmalquran.R;
+import com.joey.khatmalquran.data.db.entities.Part;
 
 import java.util.List;
 

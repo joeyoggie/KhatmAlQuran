@@ -1,4 +1,4 @@
-package com.joey.khatmalquran;
+package com.joey.khatmalquran.ui.main;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -7,9 +7,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
+import androidx.annotation.NonNull;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.core.app.ActivityCompat;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +29,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.joey.khatmalquran.R;
+import com.joey.khatmalquran.data.db.entities.Group;
+import com.joey.khatmalquran.data.db.entities.Part;
+import com.joey.khatmalquran.ui.authentication.IntroductionActivity;
+import com.joey.khatmalquran.utils.CustomProgressDialog;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -191,7 +196,7 @@ public class MainActivity extends Activity {
                 groupFragment.show(getFragmentManager(), "groupFragment");
                 groupFragment.setPartItems(groups.get(position).getParts());
                 groupFragment.setGroupName(groups.get(position).getName());
-                groupFragment.setGroupID(groups.get(position).getGroupID());
+                groupFragment.setGroupID(groups.get(position).getID());
             }
         });
         groupsListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -204,7 +209,7 @@ public class MainActivity extends Activity {
                 builder.setPositiveButton("Leave", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        leaveGroup(group.getGroupID());
+                        leaveGroup(group.getID());
                     }
                 });
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -293,9 +298,9 @@ public class MainActivity extends Activity {
                             Group group = new Group(groupID, groupName, parts, 0, prefs.getLong("userID", 0), members/*new HashMap<String, Long>(), partStates, new HashMap<String, Long>()*/);
 
                             storageReference = mDatabase.getReference("root/groups");
-                            storageReference.child(""+group.getGroupID()).setValue(group.toMap());
+                            storageReference.child(""+group.getID()).setValue(group.toMap());
 
-                            configurationReference.child("latestGroupID").setValue(group.getGroupID());
+                            configurationReference.child("latestGroupID").setValue(group.getID());
 
                             customProgressDialog.dismiss();
                         }
@@ -332,13 +337,13 @@ public class MainActivity extends Activity {
                                     members = new ArrayList<Long>();
                                     members.add(userID);
                                     group.setMembers(members);
-                                    storageReference.child("" + group.getGroupID()).setValue(group.toMap());
+                                    storageReference.child("" + group.getID()).setValue(group.toMap());
                                     customProgressDialog.dismiss();
                                 }
                                 else if(members != null && !members.contains(userID)) {
                                     members.add(userID);
                                     group.setMembers(members);
-                                    storageReference.child("" + group.getGroupID()).setValue(group.toMap());
+                                    storageReference.child("" + group.getID()).setValue(group.toMap());
                                     customProgressDialog.dismiss();
                                 }
                                 else if(members != null && members.contains(userID)){
@@ -383,7 +388,7 @@ public class MainActivity extends Activity {
                                 if(members != null && members.contains(userID)) {
                                     members.remove(userID);
                                     group.setMembers(members);
-                                    storageReference.child("" + group.getGroupID()).setValue(group.toMap());
+                                    storageReference.child("" + group.getID()).setValue(group.toMap());
                                     customProgressDialog.dismiss();
                                 }
                             }

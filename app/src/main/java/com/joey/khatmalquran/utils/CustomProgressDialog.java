@@ -1,9 +1,11 @@
-package com.joey.khatmalquran;
+package com.joey.khatmalquran.utils;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+
+import com.joey.khatmalquran.R;
 
 /**
  * Created by Joey on 11/25/2017.

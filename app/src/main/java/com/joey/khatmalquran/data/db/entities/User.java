@@ -1,4 +1,4 @@
-package com.joey.khatmalquran;
+package com.joey.khatmalquran.data.db.entities;
 
 import com.google.firebase.database.Exclude;
 
@@ -11,9 +11,9 @@ import java.util.Map;
  */
 
 public class User {
-    long id;
-    String name, fcmToken;
-    List<Integer> groups;
+    private long id;
+    private String name, fcmToken;
+    private List<Integer> groups;
 
     public User(){
 

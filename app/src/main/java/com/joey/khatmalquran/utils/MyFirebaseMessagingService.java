@@ -1,16 +1,27 @@
-package com.joey.khatmalquran;
+package com.joey.khatmalquran.utils;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.support.v4.app.NotificationCompat;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
 import android.util.Log;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.joey.khatmalquran.ui.main.MainActivity;
 
 /**
  * Created by Joey on 12/3/2017.
@@ -111,5 +122,38 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+
+    @Override
+    public void onNewToken(String refreshedToken) {
+        super.onNewToken(refreshedToken);
+        // Get updated InstanceID token.
+        //String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.d("InstanceIDService", "Refreshed token: " + refreshedToken);
+
+        SharedPreferences prefs = getSharedPreferences("KhatmAlQuran.Login", 0);
+        long userID = prefs.getLong("userID", -1);
+        // If you want to send messages to this application instance or
+        // manage this apps subscriptions on the server side, send the
+        // Instance ID token to your app server.
+        sendRegistrationToServer(refreshedToken, userID);
+    }
+
+    private void sendRegistrationToServer(final String token, final long userID){
+        final FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        final FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+        final DatabaseReference storageReference = mDatabase.getReference("root/users");
+
+        mAuth.signInAnonymously().addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    storageReference.child(""+userID).child("fcmToken").setValue(token);
+                }
+                else{
+                    Log.d("InstanceIDService", "Failed to authenticate with server. " + task.getException());
+                }
+            }
+        });
     }
 }

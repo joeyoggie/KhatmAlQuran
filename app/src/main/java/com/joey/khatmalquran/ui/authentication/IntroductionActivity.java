@@ -1,11 +1,11 @@
-package com.joey.khatmalquran;
+package com.joey.khatmalquran.ui.authentication;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -26,6 +26,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.joey.khatmalquran.R;
+import com.joey.khatmalquran.data.db.entities.User;
+import com.joey.khatmalquran.ui.main.MainActivity;
+import com.joey.khatmalquran.utils.CustomProgressDialog;
 
 import java.util.ArrayList;
 

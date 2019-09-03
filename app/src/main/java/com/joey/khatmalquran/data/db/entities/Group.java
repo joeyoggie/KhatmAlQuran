@@ -1,4 +1,4 @@
-package com.joey.khatmalquran;
+package com.joey.khatmalquran.data.db.entities;
 
 import com.google.firebase.database.Exclude;
 
@@ -11,11 +11,10 @@ import java.util.Map;
  */
 
 public class Group {
-    long groupID, deadline;
-    String name;
-    List<Part> parts;
-    long groupAdminID;
-    List<Long> members;
+    private long id, adminID, deadline;
+    private String name;
+    private List<Part> parts;
+    private List<Long> members;
     /*Map<String, Long> partsAssociations; //part number, user ID
     Map<String, Integer> partsStates; //part number, state
     Map<String, Long> partsTimestamps; //part number, timestamp*/
@@ -24,16 +23,13 @@ public class Group {
 
     }
 
-    public Group(long id, String name, List<Part> parts, long deadline, long groupAdminID, List<Long> members/*, Map<String, Long> partsAssociations, Map<String, Integer> partsStates, Map<String, Long> partsTimestamps*/){
-        this.groupID = id;
+    public Group(long id, String name, List<Part> parts, long deadline, long groupAdminID, List<Long> members){
+        this.id = id;
         this.name = name;
         this.parts = parts;
         this.deadline = deadline;
-        this.groupAdminID = groupAdminID;
+        this.adminID = groupAdminID;
         this.members = members;
-        /*this.partsAssociations = partsAssociations;
-        this.partsStates = partsStates;
-        this.partsTimestamps = partsTimestamps;*/
     }
 
     public String getName() {
@@ -44,20 +40,20 @@ public class Group {
         this.name = name;
     }
 
-    public long getGroupID() {
-        return this.groupID;
+    public long getID() {
+        return this.id;
     }
 
-    public void setGroupID(long groupID) {
-        this.groupID = groupID;
+    public void setID(long groupID) {
+        this.id = groupID;
     }
 
-    public long getGroupAdminID() {
-        return groupAdminID;
+    public long getAdminID() {
+        return adminID;
     }
 
-    public void setGroupAdminID(long groupAdminID) {
-        this.groupAdminID = groupAdminID;
+    public void setAdminID(long adminID) {
+        this.adminID = adminID;
     }
 
     public void setParts(List<Part> parts){
@@ -73,30 +69,6 @@ public class Group {
     public void setMembers(List<Long> members) {
         this.members = members;
     }
-
-    /*public Map<String, Long> getPartsAssociations() {
-        return partsAssociations;
-    }
-
-    public void setPartsAssociations(Map<String, Long> partsAssociations) {
-        this.partsAssociations = partsAssociations;
-    }
-
-    public Map<String, Long> getPartsTimestamps() {
-        return partsTimestamps;
-    }
-
-    public void setPartsTimestamps(Map<String, Long> patsTimestamps) {
-        this.partsTimestamps = patsTimestamps;
-    }
-
-    public Map<String, Integer> getPartsStates() {
-        return partsStates;
-    }
-
-    public void setPartsStates(Map<String, Integer> partsStates) {
-        this.partsStates = partsStates;
-    }*/
 
     public int getNumberOfPartsUntaken(){
         int number = 0;
@@ -166,14 +138,14 @@ public class Group {
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
-        result.put("groupID", this.groupID);
+        result.put("groupID", this.id);
         result.put("name", this.name);
         result.put("parts", this.parts);
         /*result.put("partsAssociations", this.partsAssociations);
         result.put("partsStates", this.partsStates);
         result.put("partsTimestamps", this.partsTimestamps);*/
         result.put("deadline", this.deadline);
-        result.put("groupAdminID", this.groupAdminID);
+        result.put("groupAdminID", this.adminID);
         result.put("members", this.members);
         return result;
     }

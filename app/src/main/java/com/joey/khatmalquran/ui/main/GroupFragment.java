@@ -1,4 +1,4 @@
-package com.joey.khatmalquran;
+package com.joey.khatmalquran.ui.main;
 
 import android.app.AlertDialog;
 import android.app.DialogFragment;
@@ -13,8 +13,8 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.v4.content.FileProvider;
+import androidx.annotation.NonNull;
+import androidx.core.content.FileProvider;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -36,6 +36,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.joey.khatmalquran.R;
+import com.joey.khatmalquran.data.db.entities.Part;
+import com.joey.khatmalquran.utils.CustomProgressDialog;
 
 import java.io.File;
 import java.io.FileNotFoundException;
