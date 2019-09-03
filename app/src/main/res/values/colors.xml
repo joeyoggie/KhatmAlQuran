@@ -3,4 +3,38 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="whiteColor">#ffffff</color>
+    <color name="blackColor">#000000</color>
+    <color name="transparentColor">#00000000</color>
+    <color name="lightGrayColor">#d3d3d3</color>
+    <color name="darkGrayColor">#aaa</color>
+    <color name="darkerGrayColor">#8F8F8F</color>
+    <color name="redColor">#e80520</color>
+    <color name="lightBlueColor">#007ee5</color>
+    <color name="darkBlueColor">#097abc</color>
+    <color name="blue_30_transparent_background">#48159ede</color>
+    <color name="greenColor">#239510</color>
+    <color name="lightGreenColor">#1de9b6</color>
+    <color name="darkGreenColor">#00bfa5</color>
+    <color name="lightOrangeColor">#DC8012</color>
+    <color name="darkOrangeColor">#F38820</color>
+    <color name="paleOrangeColor">#E49C46</color>
+    <color name="darkestOrangeColor">#DA4416</color>
+    <color name="orangeProgressColor">#DDA70F</color>
+    <color name="yellowColor">#EFE703</color>
+    <color name="shadowColor">#B3000000</color>
+    <color name="messageSentBackgroundColor">#9FC8DD</color>
+    <color name="messageReceivedBackgroundColor">#E2E2E2</color>
+    <color name="EditTextGrayHintColor">#b8b8b8</color>
+    <color name="black_20_transparent_background">#33000000</color>
+    <color name="black_40_transparent_background">#66000000</color>
+    <color name="black_50_transparent_background">#80000000</color>
+    <color name="black_60_transparent_background">#99000000</color>
+    <color name="black_70_transparent_background">#b3000000</color>
+    <color name="black_75_transparent_background">#bf000000</color>
+
+    <color name="transparent_graylight">#33cacacc</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

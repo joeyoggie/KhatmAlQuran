@@ -65,4 +65,8 @@
         <item>الجزء التاسع والعشرون</item>
         <item>الجزء الثلاثون</item>
     </string-array>
+
+    <string name="channel_name" translatable="false">BeSure Channel</string>
+    <string name="channel_description" translatable="false">This is the main channel for BeSure app</string>
+    <string name="channel_name_mute" translatable="false">BeSure Channel (Mute)</string>
 </resources>
