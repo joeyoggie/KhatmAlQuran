@@ -6,9 +6,12 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.fragment.app.FragmentTransaction;
@@ -234,7 +237,7 @@ public class Utils {
                 inputsValid = false;
                 YoYo.with(Techniques.Shake)
                         .duration(700)
-                        .repeat(1)
+                        .repeat(0)
                         .playOn(editText);
             }
         }
@@ -421,6 +424,22 @@ public class Utils {
         }
 
         return deviceInfo;
+    }
+
+    public static void setEditTextEndDrawable(EditText editTextEndDrawable, int drawableID){
+        if(MySettings.getActiveLanguage().equals("en")){
+            editTextEndDrawable.setCompoundDrawablesWithIntrinsicBounds(0, 0, drawableID, 0);
+        }else if(MySettings.getActiveLanguage().equals("ar")){
+            editTextEndDrawable.setCompoundDrawablesWithIntrinsicBounds(drawableID, 0, 0, 0);
+        }
+    }
+
+    public static void setEditTextStartDrawable(EditText editTextEndDrawable, int drawableID){
+        if(MySettings.getActiveLanguage().equals("en")){
+            editTextEndDrawable.setCompoundDrawablesWithIntrinsicBounds(drawableID, 0, 0, 0);
+        }else if(MySettings.getActiveLanguage().equals("ar")){
+            editTextEndDrawable.setCompoundDrawablesWithIntrinsicBounds(0, 0, drawableID, 0);
+        }
     }
 
     public static Gson getGson(){
